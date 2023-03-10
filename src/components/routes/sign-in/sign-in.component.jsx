@@ -5,7 +5,7 @@ import { signInWithGooglePopup,
          createUserDocumentFromAuth,
         //  signInWithGoogleRedirect,
         //  auth
-         } from '../../../utils/firebase/firebase.utils';
+         } from '../../../services/firebase/firebase.services';
 
 import SignUpForm from '../../sign-up-form/sign-up-form.component';
 
@@ -23,6 +23,7 @@ const SignIn = () => {
 
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopup();
+        // eslint-disable-next-line
         const userDocRef =  await createUserDocumentFromAuth(user);
     }
 
