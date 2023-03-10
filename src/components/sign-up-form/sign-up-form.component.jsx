@@ -52,7 +52,7 @@ const SignUpForm = () => {
             <form onSubmit={handleSubmit}>
 
                 <FormInput 
-                    lable="Display Name"
+                    label="Display Name"
                     type="text" 
                     onChange={handleChange} 
                     name="displayName" 
@@ -61,7 +61,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput 
-                    lable="Email"
+                    label="Email"
                     type="email" 
                     onChange={handleChange} 
                     name="email" 
@@ -70,7 +70,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput 
-                    lable="Password"
+                    label="Password"
                     type="password" 
                     onChange={handleChange} 
                     name="password" 
@@ -79,7 +79,7 @@ const SignUpForm = () => {
                 />
 
                 <FormInput 
-                    lable="Confirm Password"  
+                    label="Confirm Password"  
                     type="password" 
                     onChange={handleChange} 
                     name="confirmPassword" 
