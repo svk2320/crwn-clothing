@@ -7,6 +7,7 @@ import { signInWithGooglePopup,
 import FormInput from '../form-input/form-input.component';
 import Button from "../button/button.component";
 import './sign-in-form.styles.scss';
+import { UserContext } from "../../contexts/user.contexts";
 
 const defaultFormFields = {
     email: '',
@@ -21,6 +22,8 @@ const SignInForm = () => {
         setFormFields(defaultFormFields);
     };
 
+    const { setCurrentUser } = useContext(UserContext);
+
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
         await createUserDocumentFromAuth(user);
@@ -30,8 +33,9 @@ const SignInForm = () => {
         event.preventDefault();
 
         try{
-            const res = await signInAuthUserWithEmaiAndPassword(email, password);
-            console.log(res);
+            const { user } = await signInAuthUserWithEmaiAndPassword(email, password);
+            setCurrentUser(user);
+
             resetFormFields();
         } catch(error){
             switch(error.code) {
