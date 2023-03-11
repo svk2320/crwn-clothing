@@ -7,6 +7,7 @@ export const ProductContext = createContext({
 });
 
 export const ProductsProvider = ({children}) => {
+    // eslint-disable-next-line
     const [products, setProducts] = useState(PRODUCTS);
     const value = {products};
 
