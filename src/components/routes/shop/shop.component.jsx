@@ -1,4 +1,4 @@
-import SHOP_DATA from './../../../shop-data.json';
+import SHOP_DATA from './../../../data/shop-data.json';
 
 const Shop = () => {
     return(
