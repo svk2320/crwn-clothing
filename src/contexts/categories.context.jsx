@@ -9,7 +9,6 @@ export const CategoriesContext = createContext({
 });
 
 export const CategoriesProvider = ({children}) => {
-    // eslint-disable-next-line
     const [categoriesMap, setCategoriesMap] = useState({});
 
     useEffect(() =>{
@@ -19,7 +18,6 @@ export const CategoriesProvider = ({children}) => {
     useEffect(() => {
         const getCategoriesMap = async () => {
             const categoryMap = await getCategoriesAndDocuments('categories');
-            console.log(categoryMap);
             setCategoriesMap(categoryMap);
         }
 
